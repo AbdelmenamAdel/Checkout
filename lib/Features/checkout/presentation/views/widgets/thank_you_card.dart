@@ -2,8 +2,8 @@ import 'package:checkout/Features/checkout/presentation/views/widgets/card_info_
 import 'package:checkout/Features/checkout/presentation/views/widgets/payment_info_item.dart';
 import 'package:checkout/Features/checkout/presentation/views/widgets/total_price_widget.dart';
 import 'package:checkout/core/utils/styles.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class ThankYouCard extends StatelessWidget {
   const ThankYouCard({
@@ -69,8 +69,8 @@ class ThankYouCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 const Icon(
-                  FontAwesomeIcons.barcode,
-                  size: 64,
+                  CupertinoIcons.barcode,
+                  size: 80,
                 ),
                 Container(
                   width: 113,
