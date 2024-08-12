@@ -4,10 +4,10 @@ import 'Features/checkout/presentation/views/my_cart_view.dart';
 
 void main() {
   runApp(
-    DevicePreview(
-      builder: (context) => const CheckoutApp(),
-    ),
-  );
+      // DevicePreview(
+      //   builder: (context) => const CheckoutApp(),
+      // ),
+      const CheckoutApp());
 }
 
 class CheckoutApp extends StatelessWidget {
