@@ -4,6 +4,7 @@ import 'package:checkout/core/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../payment_details.dart';
 import 'payment_methods_bottom_sheet.dart';
 
 class MyCartViewBody extends StatelessWidget {
@@ -85,7 +86,7 @@ class CustomBasket extends StatelessWidget {
         Image.asset('assets/images/basket_image.png'),
         Positioned(
           top: 10,
-          right: -30,
+          right: -50,
           child: Stack(
             children: [
               SvgPicture.asset('assets/images/totalprice.svg'),
@@ -100,7 +101,10 @@ class CustomBasket extends StatelessWidget {
                       padding: EdgeInsets.symmetric(horizontal: 18.0),
                       child: Text(
                         """Kinetic Sand Dino \nDig Playset""",
-                        style: TextStyle(fontSize: 18),
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                        ),
                       ),
                     ),
                     Padding(
@@ -108,38 +112,33 @@ class CustomBasket extends StatelessWidget {
                       child: Row(
                         children: [
                           Container(
-                            decoration: const BoxDecoration(
-                              color: Colors.white,
-                              border: Border(
-                                  top: BorderSide(
-                                    width: .5,
-                                  ),
-                                  bottom: BorderSide(
-                                    width: .5,
-                                  ),
-                                  left: BorderSide(
-                                    width: .5,
-                                  ),
-                                  right: BorderSide(
-                                    width: .5,
-                                  )),
-                              borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(5),
-                                bottomLeft: Radius.circular(5),
+                              decoration: const BoxDecoration(
+                                color: Colors.white,
+                                border: Border(
+                                    top: BorderSide(
+                                      width: .5,
+                                    ),
+                                    bottom: BorderSide(
+                                      width: .5,
+                                    ),
+                                    left: BorderSide(
+                                      width: .5,
+                                    ),
+                                    right: BorderSide(
+                                      width: .5,
+                                    )),
+                                borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(5),
+                                  bottomLeft: Radius.circular(5),
+                                ),
                               ),
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: IconButton(
-                                  padding: EdgeInsets.zero,
-                                  constraints: const BoxConstraints(),
-                                  onPressed: () {},
-                                  icon: const Icon(
-                                    Icons.remove,
-                                    size: 18,
-                                  )),
-                            ),
-                          ),
+                              child: const Padding(
+                                padding: EdgeInsets.all(9.0),
+                                child: Icon(
+                                  Icons.remove,
+                                  size: 18,
+                                ),
+                              )),
                           Container(
                             decoration: const BoxDecoration(
                               color: Colors.white,
@@ -184,16 +183,12 @@ class CustomBasket extends StatelessWidget {
                                 bottomRight: Radius.circular(5),
                               ),
                             ),
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: IconButton(
-                                  padding: EdgeInsets.zero,
-                                  constraints: const BoxConstraints(),
-                                  onPressed: () {},
-                                  icon: const Icon(
-                                    Icons.add,
-                                    size: 18,
-                                  )),
+                            child: const Padding(
+                              padding: EdgeInsets.all(9.0),
+                              child: Icon(
+                                Icons.add,
+                                size: 18,
+                              ),
                             ),
                           ),
                           const Padding(
