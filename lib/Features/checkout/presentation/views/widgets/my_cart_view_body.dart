@@ -56,14 +56,15 @@ class MyCartViewBody extends StatelessWidget {
               Navigator.of(context).push(MaterialPageRoute(builder: (context) {
                 return const PaymentDetailsView();
               }));
-              Future.delayed(const Duration(seconds: 3));
-              showModalBottomSheet(
-                  context: context,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(16)),
-                  builder: (context) {
-                    return const PaymentMethodsBottomSheet();
-                  });
+              Future.delayed(const Duration(seconds: 1)).then((value) {
+                showModalBottomSheet(
+                    context: context,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16)),
+                    builder: (context) {
+                      return const PaymentMethodsBottomSheet();
+                    });
+              });
             },
           ),
           const SizedBox(
