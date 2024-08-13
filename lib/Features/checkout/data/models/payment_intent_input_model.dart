@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 class PaymentIntentInputModel {
   final String amount;
   final String currency;
@@ -8,8 +10,10 @@ class PaymentIntentInputModel {
   });
 
   Map<String, dynamic> toJson() {
+    int price = int.parse(amount) * 100;
+
     return {
-      'amount': amount,
+      'amount': "$price",
       'currency': currency,
     };
   }
