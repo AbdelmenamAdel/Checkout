@@ -53,10 +53,10 @@ class MyCartViewBody extends StatelessWidget {
           CustomButton(
             text: 'Complete Payment',
             onTap: () {
-              // Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-              //   return const PaymentDetailsView();
-              // }));
-
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+                return const PaymentDetailsView();
+              }));
+              Future.delayed(const Duration(seconds: 3));
               showModalBottomSheet(
                   context: context,
                   shape: RoundedRectangleBorder(
