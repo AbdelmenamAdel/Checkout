@@ -35,28 +35,28 @@ class ThankYouCard extends StatelessWidget {
               style: Styles.style20,
             ),
             const SizedBox(
-              height: 42,
+              height: 16,
             ),
             const PaymentItemInfo(
               title: 'Date',
               value: '01/24/2023',
             ),
             const SizedBox(
-              height: 20,
+              height: 8,
             ),
             const PaymentItemInfo(
               title: 'Time',
               value: '10:15 AM',
             ),
             const SizedBox(
-              height: 20,
+              height: 8,
             ),
             const PaymentItemInfo(
               title: 'To',
               value: 'Sam Louis',
             ),
             const Divider(
-              height: 60,
+              height: 30,
               thickness: 2,
             ),
             const TotalPrice(title: 'Total', value: r'$50.97'),
