@@ -1,7 +1,10 @@
+import 'package:checkout/Features/checkout/data/repos/checkout_repo_impl.dart';
+import 'package:checkout/Features/checkout/presentation/manager/cubit/payment_cubit.dart';
 import 'package:checkout/Features/checkout/presentation/views/widgets/cart_info_item.dart';
 import 'package:checkout/Features/checkout/presentation/views/widgets/total_price_widget.dart';
 import 'package:checkout/core/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../payment_details.dart';
@@ -53,18 +56,19 @@ class MyCartViewBody extends StatelessWidget {
           CustomButton(
             text: 'Complete Payment',
             onTap: () {
-              Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-                return const PaymentDetailsView();
-              }));
-              Future.delayed(const Duration(seconds: 1)).then((value) {
-                showModalBottomSheet(
-                    context: context,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(16)),
-                    builder: (context) {
-                      return const PaymentMethodsBottomSheet();
-                    });
-              });
+              // Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+              //   return const PaymentDetailsView();
+              // }));
+              showModalBottomSheet(
+                  context: context,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(16)),
+                  builder: (context) {
+                    return BlocProvider(
+                      create: (context) => PaymentCubit(CheckoutRepoImpl()),
+                      child: const PaymentMethodsBottomSheet(),
+                    );
+                  });
             },
           ),
           const SizedBox(
