@@ -8,15 +8,17 @@ class ApiService {
     required String url,
     required String token,
     String? contentType,
+    Map<String, String>? headers,
   }) async {
     final response = _dio.post(
       url,
       data: body,
       options: Options(
-        headers: {
-          'Content-Type': contentType,
-          'Authorization': 'Bearer $token',
-        },
+        headers: headers ??
+            {
+              'Content-Type': contentType,
+              'Authorization': 'Bearer $token',
+            },
       ),
     );
     return response;
