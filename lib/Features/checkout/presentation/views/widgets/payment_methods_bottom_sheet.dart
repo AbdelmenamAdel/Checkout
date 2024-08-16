@@ -26,20 +26,22 @@ class _PaymentMethodsBottomSheetState extends State<PaymentMethodsBottomSheet> {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.all(16),
+    return Padding(
+      padding: const EdgeInsets.all(16),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          SizedBox(
+          const SizedBox(
             height: 16,
           ),
-          PaymentMethodsListView(),
-          SizedBox(
+          PaymentMethodsListView(
+            updatePaymentMethod: updatePaymentMethod,
+          ),
+          const SizedBox(
             height: 32,
           ),
           CustomButtonBlocConsumer(
-            isPaypal: false,
+            isPaypal: isPaypal,
           ),
         ],
       ),
